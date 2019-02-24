@@ -1,0 +1,176 @@
+// https://github.com/equinusocio/vsc-material-theme
+@require "theme"
+@require "diff"
+
+languages = "js" "javascript" "python" "ruby" "xml" "html" "css" "perl" "sql" "coffeescript" "java" "scala" "kotlin" "c" "c\+\+" "go" "less" "sass" "scss" "stylus" "styl" "typescript" "ts" "bash" "yml" "gradle"
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"]
+  background: $highlight-background
+
+.content
+  pre,
+  pre[class*="language-"]
+    overflow: auto
+    padding: 0.8rem 0.5rem
+    background-color: $highlight-background
+
+    code
+      margin: 0
+      border-radius: 3px
+      color: $highlight-foreground
+      font-size: 14px
+      font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
+      line-height: 1.4
+
+div[class*="language-"]
+  position: relative
+  border-radius: 6px
+
+  .highlight-lines
+    position: absolute
+    top: 0
+    left: 0
+    padding-top: 1.3rem
+    width: 100%
+    line-height: 1.4
+    user-select: none
+
+    .highlighted
+      background-color: $highlight-background
+
+  pre,
+  pre[class*="language-"]
+    position: relative
+    z-index: 1
+
+  &::before
+    position: absolute
+    top: 0.8em
+    right: 1em
+    z-index: 3
+    color: rgba(255, 255, 255, 0.4)
+    font-size: 0.75rem
+
+  &:not(.line-numbers-mode)
+    .line-numbers-wrapper
+      display: none
+
+  &.line-numbers-mode
+    .highlight-lines .highlighted
+      position: relative
+
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 3
+        display: block
+        width: $lineNumbersWrapperWidth
+        height: 100%
+        background-color: $highlight-background
+        content: " "
+
+    pre
+      padding-left: ($lineNumbersWrapperWidth + 1) rem
+      vertical-align: middle
+
+    .line-numbers-wrapper
+      position: absolute
+      top: 0
+      padding: 0.8rem 0
+      width: $lineNumbersWrapperWidth
+      color: $highlight-gutter.color
+      text-align: center
+      font-size: 14px
+      font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
+      line-height: 1.4
+
+      br
+        user-select: none
+
+      .line-number
+        position: relative
+        z-index: 4
+        font-size: 14px
+        user-select: none
+
+    &::after
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      width: $lineNumbersWrapperWidth
+      height: 100%
+      border-right: 1px solid darken($highlight-background, 5)
+      border-radius: 6px 0 0 6px
+      background-color: $highlight-background
+      content: ""
+
+// #app
+// .content
+// pre,
+// pre[class*="language-"]
+// color: $highlight-foreground
+
+// code
+// color: $highlight-foreground
+// font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+  color: $highlight-comment
+
+.token.punctuation
+  color: $highlight-foreground
+
+.token.namespace,
+.token.tag
+  color: $highlight-red
+
+.token.attr-name
+  color: $highlight-purple
+
+.token.deleted
+  color: $highlight-deletion
+
+.token.inserted
+  color: $highlight-addition
+
+.token.function-name
+  color: $highlight-blue
+
+.token.string,
+.token.number
+  color: $highlight-green
+
+.token.boolean,
+.token.property,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.important.boolean
+  color: $highlight-orange
+
+.token.function,
+.token.class-name
+  color: $highlight-yellow
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin
+  color: $highlight-aqua
+
+.token.char,
+.token.attr-value,
+.token.variable
+  color: $highlight-green
+
+.token.operator,
+.token.entity,
+.token.url
+  color: $highlight-aqua

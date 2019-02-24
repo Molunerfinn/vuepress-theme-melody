@@ -1,0 +1,48 @@
+{
+  "name": "vuepress-theme-melody",
+  "version": "0.0.1",
+  "description": "A simple & beautiful blog theme for VuePress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Molunerfinn/vuepress-theme-melody.git"
+  },
+  "keywords": [
+    "vuepress",
+    "vuepress-theme"
+  ],
+  "author": "Molunerfinn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Molunerfinn/vuepress-theme-melody/issues"
+  },
+  "homepage": "https://github.com/Molunerfinn/vuepress-theme-melody#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "lint-staged": "^8.1.4",
+    "stylus-supremacy": "^2.12.7"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
