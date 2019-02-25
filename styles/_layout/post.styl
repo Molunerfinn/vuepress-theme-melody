@@ -1,0 +1,39 @@
+headStyle()
+  &:hover
+    .header-anchor
+      margin-right: 0.1rem
+
+.melody-content
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    transition: all 0.2s ease-out
+
+    .header-anchor
+      color: $light-red
+      transition: all 0.2s ease-out
+
+    &:hover
+      .header-anchor
+        color: $light-blue
+
+  h1
+    headStyle(1)
+
+  h2
+    headStyle(0.9)
+
+  h3
+    headStyle(0.8)
+
+  h4
+    headStyle(0.7)
+
+  h5
+    headStyle(0.6)
+
+  h6
+    headStyle(0.6)

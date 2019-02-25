@@ -1,6 +1,14 @@
-body,
 html
   margin: 0
+  font-size: 20px
+
+body
+  margin: 0
+  color: $font-black
+  font-size: $font-size
+  font-size: $font-size
+  font-family: $font-family
+  line-height: $text-line-height
 
 *
   box-sizing: border-box
@@ -8,3 +16,103 @@ html
   &::selection
     background: $theme-text-selection-color
     color: #f7f7f7
+
+  &::-webkit-scrollbar
+    width: 8px
+    height: 8px
+
+  &::-webkit-scrollbar-thumb
+    background: $light-blue
+
+  &::-webkit-scrollbar-track
+    background-color: transparent
+
+a
+  color: #99a9bf
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    color: #49b1f5
+    text-decoration: none
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  position: relative
+  margin: 0.2rem 0
+  color: lighten($font-color, 15%)
+  font-weight: bold
+
+hr
+  position: relative
+  margin: 2rem auto
+  width: calc(100% - 4px)
+  border: 2px dashed $pale-blue
+  background: $white
+
+  &:hover
+    &:before
+      left: calc(95% - 20px)
+
+  &:before
+    position: absolute
+    top: -10px
+    left: 5%
+    z-index: 1
+    color: $light-blue
+    content: "\f0c4"
+    font: normal normal normal 14px / 1 FontAwesome
+    font-size: 20px
+    transition: all 1s ease-in-out
+
+table
+  overflow: auto
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+
+  thead
+    background: alpha($a-link-color, 10%)
+
+  th,
+  td
+    padding: 0.3rem 0.6rem
+    border: 1px solid darken($light-grey, 10%)
+    vertical-align: top
+
+main
+  margin-top: $navbar-height
+
+  &.open-sidebar
+    padding-left: $sidebar-width
+
+  .melody-content
+    margin: 0 auto
+    padding-top: 1rem
+    width: $content-width
+
+    img
+      display: block
+      margin: 0 auto
+      padding: 4px
+      max-width: 100%
+      border: 1px solid #eaeefb
+      cursor: pointer
+      transition: all 0.2s ease-in-out
+
+      &:hover
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
+
+@media screen and (max-width: $sm)
+  main
+    .melody-content
+      margin: 0.5rem 1.5rem
+      width: auto
+
+@media screen and (min-width: $md)
+  main
+    .melody-content
+      width: $content-large-width

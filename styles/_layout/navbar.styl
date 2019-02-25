@@ -1,0 +1,43 @@
+header.navbar
+  position: fixed
+  top: 0
+  z-index: 99
+  padding: 10px 36px
+  width: 100%
+  height: $navbar-height
+  border: none
+  background: alpha($white, 0.8)
+  box-shadow: 0 5px 6px -5px alpha($grey, 0.6)
+  font-size: 0.9rem
+  line-height: 1.76rem
+  transition: all 0.2s ease-in-out
+
+  a
+    text-decoration: none
+
+  .links
+    top: 10px
+    background-color: transparent
+
+  .nav-links
+    font-size: 0.7rem
+
+    .nav-item
+      font-size: 0.7rem
+
+      & > a:not(.external)
+        &:hover,
+        &.router-link-active
+          margin-bottom: 0
+          border-bottom: none
+          color: $light-blue
+
+    .repo-link
+      &:hover
+        color: $light-blue
+
+  .search-box
+    input
+      height: 1.6rem
+      background-position: 0.3rem 0.4rem
+      background-size: 0.8rem
