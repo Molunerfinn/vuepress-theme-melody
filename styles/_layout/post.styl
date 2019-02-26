@@ -10,6 +10,7 @@ headStyle()
   h4,
   h5,
   h6
+    headStyle()
     transition: all 0.2s ease-out
 
     .header-anchor
@@ -20,20 +21,13 @@ headStyle()
       .header-anchor
         color: $light-blue
 
-  h1
-    headStyle(1)
-
-  h2
-    headStyle(0.9)
-
-  h3
-    headStyle(0.8)
-
-  h4
-    headStyle(0.7)
-
-  h5
-    headStyle(0.6)
-
-  h6
-    headStyle(0.6)
+  &:not(.custom)
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6
+      margin-top: -3.1rem
+      margin-bottom: 0
+      padding-top: 3.1rem

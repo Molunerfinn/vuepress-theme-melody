@@ -32,6 +32,8 @@ export default {
 
 <style lang="stylus">
 .sidebar
+  &-heading
+    display none
   ul
     padding 0
     margin 0

@@ -10,3 +10,35 @@
   height: 100%
   background: $sidebar-background
   box-shadow: -0.25rem 0 0.25rem rgba(232, 237, 250, 0.6) inset
+
+  a.sidebar-link
+    border-left: none
+    color: $theme-link-color
+    text-decoration: none
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      color: $theme-color
+
+    &:not(>ul li a.active).active
+      // border-left-color: $theme-text-selection-color
+      // color: $theme-text-selection-color
+      border-right: 3px solid #009d92
+      border-right-color: #009d92
+      background: $theme-text-selection-color
+      color: #fff
+
+  .sidebar-sub-headers
+    .sidebar-link
+      transition: all 0.2s ease-in-out
+
+      &:hover
+        color: $theme-text-selection-color
+
+      &.active
+        // border-left-color: $theme-text-selection-color
+        // color: $theme-text-selection-color
+        border-right: 3px solid #009d92
+        border-right-color: #009d92
+        background: $theme-text-selection-color
+        color: #fff
