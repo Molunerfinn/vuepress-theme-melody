@@ -2,22 +2,21 @@
   <aside class="sidebar">
     <NavLinks />
     <slot name="top" />
-    <SidebarLinks
+    <!-- <SidebarLinks
       :depth="0"
       :items="items"
-    />
+    /> -->
     <slot name="bottom" />
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@parent-theme/components/SidebarLinks.vue'
 import NavLinks from '@parent-theme/components/NavLinks.vue'
 
 export default {
   name: 'Sidebar',
 
-  components: { SidebarLinks, NavLinks },
+  components: { NavLinks },
 
   props: {
     items: {

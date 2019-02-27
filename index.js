@@ -9,6 +9,7 @@ module.exports = (options, ctx) => {
           test: null
         }
       ],
+      ['@vuepress/active-header-links', false],
       require('./plugins/stylus')
     ]
   }
