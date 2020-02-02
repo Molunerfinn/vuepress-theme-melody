@@ -4,7 +4,8 @@ module.exports = (options, ctx) => ({
   chainWebpack (config) {
     const defineConfig = style => {
       style.define('theme-config', data => {
-        return get(ctx.themeConfig, data.val)
+        const result = get(ctx.themeConfig, data.val) || ''
+        return result
       })
     }
     config.module
@@ -14,7 +15,7 @@ module.exports = (options, ctx) => ({
       .resourceQuery(/module/)
       .use('stylus-loader')
       .tap(options => merge(options, {
-        use: [ defineConfig ]
+        use: [defineConfig]
       }))
   }
 })

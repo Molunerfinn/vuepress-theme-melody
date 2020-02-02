@@ -1,0 +1,76 @@
+headStyle(fontsize)
+  padding-left: unit(fontsize + 0.1, "rem")
+  font-size: unit(fontsize + 0.4, "rem")
+
+  code
+    font-size: unit(fontsize, "rem")
+
+  &:before
+    $bottom = unit((fontsize / 2), "rem")
+    bottom: "calc(50% - %s - 0.15rem)" % $bottom
+    font-size: unit(fontsize, "rem")
+
+  &:hover
+    padding-left: unit(fontsize + 0.2, "rem")
+
+    .header-anchor
+      margin-right: 0.1rem
+      opacity: 0
+
+.melody-content
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    position: relative
+    margin: 0.2rem 0
+    padding-bottom: 0
+    border-bottom: none
+    color: lighten($font-color, 15%)
+    font-weight: bold
+    cursor: pointer
+    transition: all 0.2s ease-out
+
+    &:before
+      position: absolute
+      left: 0
+      color: $light-red
+      content: "\f0c1"
+      font-weight: 900
+      font-size: 0.8rem
+      font-family: "Font Awesome 5 Free"
+      transition: all 0.2s ease-out
+
+    &:hover
+      padding-left: 1.1rem
+
+      &:before
+        color: $light-blue
+
+  h1
+    headStyle(1)
+
+  h2
+    headStyle(0.9)
+
+  h3
+    headStyle(0.8)
+
+  h4
+    headStyle(0.7)
+
+  h5
+    headStyle(0.6)
+
+  h6
+    headStyle(0.6)
+
+  .header-anchor
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0

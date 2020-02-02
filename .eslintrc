@@ -2,10 +2,14 @@
   "parserOptions": {
     "parser": "babel-eslint",
     "ecmaVersion": 2017,
-    "sourceType": "module"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "extends": [
     "plugin:vue/recommended",
     "standard"
-  ]
+  ],
+  "rules": {
+    "vue/no-v-html": "off"
+  }
 }

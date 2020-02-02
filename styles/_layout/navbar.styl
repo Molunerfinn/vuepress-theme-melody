@@ -1,43 +1,178 @@
-header.navbar
-  position: fixed
+#page-header
+  position: relative
+  margin-bottom: 1rem
+  background-color: $light-blue
+  background-attachment: fixed
+  background-position: center
+  background-size: cover
+
+  &.no-bg
+    $bg-svg += ""
+    background-image: url($bg-svg) !important
+    background-size: initial
+
+  &.is-mobile
+    background-attachment: local
+
+#site-info
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 0 1rem
+  height: unit($top_img_height, "vh")
+
+#site-title,
+#site-sub-title
+  color: $theme-header-text-color
+  text-align: center
+  text-shadow: $light-shadow
+  line-height: 1.5
+
+#site-title
+  font-weight: bold
+  font-size: 1.3rem
+
+#site-sub-title
+  font-size: 0.8rem
+
+#site-social-icons
+  margin: 0 auto
+  width: 15rem
+  text-align: center
+
+  .social-icon
+    margin: 0 0.5rem
+    color: $theme-header-text-color
+    text-shadow: $light-shadow
+    font-size: 1.4rem
+    cursor: pointer
+
+    &:hover
+      color: $white
+
+#page-nav
+  position: absolute
   top: 0
   z-index: 99
   padding: 10px 36px
   width: 100%
-  height: $navbar-height
   border: none
-  background: alpha($white, 0.8)
-  box-shadow: 0 5px 6px -5px alpha($grey, 0.6)
-  font-size: 0.9rem
-  line-height: 1.76rem
+  font-size: 18px
   transition: all 0.2s ease-in-out
 
+  .toggle-menu
+    display: none
+    padding-top: 0.5rem
+    color: $theme-header-text-color
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      color: $white
+
   a
+    color: $theme-header-text-color
     text-decoration: none
 
-  .links
-    top: 10px
-    background-color: transparent
+    &:hover
+      color: $white
 
-  .nav-links
+  .site-page
+    position: relative
+    margin-left: 0.6rem
+    padding-bottom: 0.3rem
+    text-shadow: $dark-shadow
     font-size: 0.7rem
+    cursor: pointer
 
-    .nav-item
-      font-size: 0.7rem
+    &::after
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: -1
+      width: 0
+      height: 3px
+      background-color: lighten($theme-color, 30%)
+      content: ""
+      transition: all 0.3s ease-in-out
 
-      & > a:not(.external)
-        &:hover,
-        &.router-link-active
-          margin-bottom: 0
-          border-bottom: none
-          color: $light-blue
+    &:hover
+      &::after
+        width: 100%
 
-    .repo-link
+  &.fixed
+    position: fixed
+    top: -56px
+    z-index: 101
+    background: alpha($white, 0.8)
+    box-shadow: 0 5px 6px -5px alpha($grey, 0.6)
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+    &.open-sidebar
+      .site-page
+        display: none
+        opacity: 0
+
+    a,
+    .toggle-menu,
+    #site-name
+      color: $light-black
+      text-shadow: none
+
       &:hover
         color: $light-blue
 
-  .search-box
-    input
-      height: 1.6rem
-      background-position: 0.3rem 0.4rem
-      background-size: 0.8rem
+  &.visible
+    transform: translate3d(0, 100%, 0)
+
+  #site-name
+    text-shadow: $light-shadow
+    font-weight: bold
+    cursor: pointer
+
+@media screen and (min-width: $sm)
+  #site-title
+    font-size: 2rem
+
+  #site-sub-title
+    font-size: 1.2rem
+
+@media screen and (max-width: $sm)
+  #page-header,
+  #top-contianer
+    background-attachment: local
+
+  #page-nav
+    padding: 10px 0.8rem
+
+    .toggle-menu
+      display: block
+
+    .menus
+      position: absolute
+      top: 3rem
+      right: 0.8rem
+      display: none
+      width: 8rem
+      background: alpha($white, 0.9)
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.27)
+
+      a
+        display: block
+        margin-left: 0
+        padding-top: 0.3rem
+        padding-bottom: 0.3rem
+        padding-left: 0.6rem
+        color: $font-black
+        text-shadow: none
+        font-size: 0.8rem
+
+        &:hover
+          color: $light-blue
+
+    .search
+      right: 0.5rem
+
+      span
+        display: none

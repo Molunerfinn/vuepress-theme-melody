@@ -1,6 +1,5 @@
 <template>
   <aside class="sidebar">
-    <NavLinks />
     <slot name="top" />
     <!-- <SidebarLinks
       :depth="0"
@@ -11,12 +10,9 @@
 </template>
 
 <script>
-import NavLinks from '@parent-theme/components/NavLinks.vue'
 
 export default {
   name: 'Sidebar',
-
-  components: { NavLinks },
 
   props: {
     items: {

@@ -1,20 +1,18 @@
 {
   "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    {
-      "language": "vue",
-      "autoFix": true
-    }
+    "typescript",
+    "vue",
+    "typescriptreact"
   ],
-  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
   "vetur.completion.autoImport": false,
-  // "prettier.eslintIntegration": true,
-  // "[javascript]": {
-  //   "editor.formatOnSave": true
-  // },
   "[stylus]": {
     "editor.formatOnSave": true
   },

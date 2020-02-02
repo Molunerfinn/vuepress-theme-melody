@@ -9,6 +9,7 @@ body
   font-size: $font-size
   font-family: $font-family
   line-height: $text-line-height
+  -webkit-font-smoothing: subpixel-antialiased
 
 *
   box-sizing: border-box
@@ -46,12 +47,15 @@ h6
   color: lighten($font-color, 15%)
   font-weight: bold
 
-hr
+.melody-hr
   position: relative
-  margin: 2rem auto
-  width: calc(100% - 4px)
-  border: 2px dashed $pale-blue
-  background: $white
+
+  hr
+    position: relative
+    margin: 2rem auto
+    width: calc(100% - 4px)
+    border: 2px dashed $pale-blue
+    background: $white
 
   &:hover
     &:before
@@ -59,13 +63,15 @@ hr
 
   &:before
     position: absolute
-    top: -10px
+    top: -18px
     left: 5%
     z-index: 1
     color: $light-blue
     content: "\f0c4"
-    font: normal normal normal 14px / 1 FontAwesome
-    font-size: 20px
+    text-decoration: inherit
+    font-weight: 900
+    font-size: 21px
+    font-family: "Font Awesome 5 Free"
     transition: all 1s ease-in-out
 
 table
@@ -105,6 +111,12 @@ main
 
       &:hover
         box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
 
 @media screen and (max-width: $sm)
   main

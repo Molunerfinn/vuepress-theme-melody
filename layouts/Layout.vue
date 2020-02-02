@@ -1,36 +1,30 @@
 <template>
   <div class="main">
-    <Navbar />
-    <Sidebar
-      :items="sidebarItems"
-    />
-    <main class="open-sidebar">
-      <Content class="melody-content" />
-    </main>
+    <Header />
+    <LayoutContainer>
+      <RecentPost />
+      <Pagination />
+    </LayoutContainer>
+    <Footer />
   </div>
 </template>
 <script>
-import Navbar from '@parent-theme/components/Navbar.vue'
-import Sidebar from '../components/Sidebar.vue'
-import { resolveSidebarItems } from '@parent-theme/util'
+import Header from '@theme/components/Header'
+import RecentPost from '@theme/components/RecentPost'
+import LayoutContainer from '@theme/components/LayoutContainer'
+import Footer from '@theme/components/Footer'
+import Pagination from '@theme/components/Pagination'
 export default {
   name: 'Layout',
   components: {
-    Navbar,
-    Sidebar
+    Header,
+    RecentPost,
+    LayoutContainer,
+    Footer,
+    Pagination
   },
   data () {
     return {}
-  },
-  computed: {
-    sidebarItems () {
-      return resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
-      )
-    }
   }
 }
 </script>

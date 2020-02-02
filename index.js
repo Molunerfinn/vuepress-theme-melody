@@ -1,4 +1,4 @@
-module.exports = (options, ctx) => {
+module.exports = (themeConfig, ctx) => {
   return {
     extend: '@vuepress/theme-default',
     plugins: [
@@ -10,7 +10,22 @@ module.exports = (options, ctx) => {
         }
       ],
       ['@vuepress/active-header-links', false],
-      require('./plugins/stylus')
+      require('./plugins/melody'),
+      require('./plugins/stylus'),
+      [
+        '@vuepress/blog', {
+          directories: [
+            {
+              id: 'post',
+              dirname: '_posts',
+              path: '/',
+              layout: 'Layout',
+              itemLayout: 'Post',
+              itemPermalink: themeConfig.permalink || '/:slug'
+            }
+          ]
+        }
+      ]
     ]
   }
 }
