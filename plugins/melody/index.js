@@ -1,8 +1,7 @@
 module.exports = (options, ctx) => {
   const headLinks = []
   headLinks.push([
-    // 'link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css' }
-    'link', { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' }
+    'link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css' }
   ])
   if (ctx.themeConfig.busuanzi && ctx.themeConfig.busuanzi.enable) {
     headLinks.push([

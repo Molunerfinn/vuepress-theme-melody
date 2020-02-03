@@ -1,5 +1,6 @@
 module.exports = (themeConfig, ctx) => {
   return {
+    globalLayout: './layouts/GlobalLayout.vue',
     extend: '@vuepress/theme-default',
     plugins: [
       [

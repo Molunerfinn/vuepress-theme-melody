@@ -1,77 +1,85 @@
 <template>
   <div class="recent-post melody-content">
-    <div
-      v-for="(article, idx) in $pagination.pages"
-      :key="article.key"
-      class="recent-post-item article-container"
-    >
-      <router-link
-        :to="article.path"
-        class="article-title"
-      >
-        {{ article.title || 'No title' }}
-      </router-link>
-      <time class="post_meta__date">
-        <i
-          class="fa fa-calendar"
-          aria-hidden="true"
-        />
-        {{ formatDate(article.frontmatter.date) }}
-      </time>
-      <span class="article-meta__separator">|</span>
-      <template v-if="hasCategoryList(article.frontmatter)">
-        <span
-          v-for="category in categoryList[idx]"
-          :key="`category-${category.text}`"
-          class="article-meta"
-        >
-          <i class="fa fa-inbox article-meta__icon" />
-          <router-link
-            :to="category.link"
-            class="article-meta__categories"
-          >
-            {{ category.text }}
-          </router-link>
-          <span class="article-meta__separator">|</span>
-        </span>
-      </template>
-      <template v-if="hasTagList(article.frontmatter)">
-        <span
-          v-for="(tag, index) in tagList[idx]"
-          :key="`tag-${tag.text}`"
-          class="article-meta"
-        >
-          <i class="fa fa-tag article-meta__icon" />
-          <router-link
-            :to="tag.link"
-            class="article-meta__categories"
-          >
-            {{ tag.text }}
-          </router-link>
-          <span
-            v-if="index !== tagList[idx].length - 1"
-            class="article-meta__separator"
-          >-</span>
-        </span>
-      </template>
-      <template v-if="article.excerpt">
+    <transition-group name="fade">
+      <template v-if="!loading">
         <div
-          class="content"
-          v-html="article.excerpt"
-        />
+          v-for="(article, idx) in $pagination.pages"
+          :key="article.key"
+          class="recent-post-item article-container"
+        >
+          <router-link
+            :to="article.path"
+            class="article-title"
+          >
+            {{ article.title || 'No title' }}
+          </router-link>
+          <time class="post_meta__date">
+            <i
+              class="fa fa-calendar"
+              aria-hidden="true"
+            />
+            {{ formatDate(article.frontmatter.date) }}
+          </time>
+          <span class="article-meta__separator">|</span>
+          <template v-if="hasCategoryList(article.frontmatter)">
+            <span
+              v-for="category in categoryList[idx]"
+              :key="`category-${category.text}`"
+              class="article-meta"
+            >
+              <i class="fa fa-inbox article-meta__icon" />
+              <router-link
+                :to="category.link"
+                class="article-meta__categories"
+              >
+                {{ category.text }}
+              </router-link>
+              <span class="article-meta__separator">|</span>
+            </span>
+          </template>
+          <template v-if="hasTagList(article.frontmatter)">
+            <span
+              v-for="(tag, index) in tagList[idx]"
+              :key="`tag-${tag.text}`"
+              class="article-meta"
+            >
+              <i class="fa fa-tag article-meta__icon" />
+              <router-link
+                :to="tag.link"
+                class="article-meta__categories"
+              >
+                {{ tag.text }}
+              </router-link>
+              <span
+                v-if="index !== tagList[idx].length - 1"
+                class="article-meta__separator"
+              >-</span>
+            </span>
+          </template>
+          <template v-if="article.excerpt">
+            <div
+              class="content"
+              v-html="article.excerpt"
+            />
+          </template>
+          <div class="content" />
+          <router-link
+            :to="article.path"
+            class="more"
+            style="margin-top: 14px"
+          >
+            Read More
+          </router-link>
+          <div class="melody-hr">
+            <hr>
+          </div>
+        </div>
       </template>
-      <div class="content" />
-      <router-link
-        :to="article.path"
-        class="more"
-        style="margin-top: 14px"
-      >
-        Read More
-      </router-link>
-      <div class="melody-hr">
-        <hr>
-      </div>
-    </div>
+    </transition-group>
+    <template v-if="loading">
+      <!-- TODO: LOADING -->
+      loading....
+    </template>
   </div>
 </template>
 <script>
@@ -80,8 +88,7 @@ export default {
   name: 'RecentPost',
   data () {
     return {
-      tagListLength: 0,
-      categoryListLength: 0
+      loading: true
     }
   },
   computed: {
@@ -139,6 +146,13 @@ export default {
       })
       return result
     }
+  },
+  created () {
+  },
+  mounted () {
+    setTimeout(() => {
+      this.loading = false
+    }, 500)
   },
   methods: {
     formatDate (date) {
