@@ -1,3 +1,10 @@
+const path = require('path')
+const fs = require('fs')
+const supportList = {
+  default: 'default',
+  'en-US': 'en-US',
+  'zh-Hans': 'zh-Hans'
+}
 module.exports = (options, ctx) => {
   const headLinks = []
   headLinks.push([
@@ -16,5 +23,16 @@ module.exports = (options, ctx) => {
   }
   ctx.siteConfig.head = ctx.siteConfig.head.concat(headLinks)
   // themeConfig cannot be modified
-  return {}
+  // i18n support
+  let lang = ctx.themeConfig.lang || supportList.default
+  if (!supportList[lang]) {
+    lang = supportList.default
+  }
+  const TEMPLATE = fs.readFileSync(path.join(__dirname, '../../utils/i18n/languages', `${lang}.json`), { encoding: 'utf-8' })
+  return {
+    name: 'melody',
+    define: {
+      TEMPLATE
+    }
+  }
 }

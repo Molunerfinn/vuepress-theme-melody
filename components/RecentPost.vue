@@ -68,7 +68,7 @@
             class="more"
             style="margin-top: 14px"
           >
-            Read More
+            {{ $t('read_more') }}
           </router-link>
           <div class="melody-hr">
             <hr>

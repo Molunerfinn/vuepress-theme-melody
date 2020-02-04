@@ -1,6 +1,7 @@
 const get = require('lodash/get')
 const merge = require('lodash/merge')
 module.exports = (options, ctx) => ({
+  name: 'melody-stylus',
   chainWebpack (config) {
     const defineConfig = style => {
       style.define('theme-config', data => {

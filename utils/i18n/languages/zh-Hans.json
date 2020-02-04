@@ -1,0 +1,42 @@
+{
+  "sidebar": {
+    "articles": "文章",
+    "tags": "标签",
+    "categories": "分类",
+    "toggle_site": "切换站点概览",
+    "toggle_article": "切换文章详情",
+    "catalog": "目录",
+    "have_read": "你已经读了"
+  },
+  "footer": {
+    "driven": "驱动",
+    "theme": "主题"
+  },
+  "copy": {
+    "success": "复制成功",
+    "error": "复制错误",
+    "no_support": "浏览器不支持"
+  },
+  "page": {
+    "articles": "文章总览",
+    "tag": "标签",
+    "category": "分类",
+    "archives": "归档"
+  },
+  "sticky": "置顶",
+  "no_title": "无题",
+  "read_more": "阅读更多",
+  "post": {
+    "created": "发表于",
+    "updated": "更新于",
+    "wordcount": "字数总计",
+    "min2read": "阅读时长: %s 分钟",
+    "copyright": {
+      "author": "文章作者",
+      "link": "文章链接",
+      "copyright_notice": "版权声明",
+      "copyright_content": "本博客所有文章除特别声明外，均采用 <a href=\"%s\">%s</a> 许可协议。转载请注明来自 <a href=\"%s\">%s</a>！"
+    }
+  },
+  "search": "搜索"
+}
