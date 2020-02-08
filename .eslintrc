@@ -13,6 +13,7 @@
     "vue/no-v-html": "off"
   },
   "globals": {
-    "TEMPLATE": true
+    "TEMPLATE": true,
+    "anime": true
   }
 }

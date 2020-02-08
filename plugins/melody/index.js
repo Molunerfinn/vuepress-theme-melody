@@ -10,6 +10,12 @@ module.exports = (options, ctx) => {
   headLinks.push([
     'link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css' }
   ])
+  headLinks.push([
+    'script', {
+      async: true,
+      src: 'https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js'
+    }
+  ])
   if (ctx.themeConfig.busuanzi && ctx.themeConfig.busuanzi.enable) {
     headLinks.push([
       'script', {

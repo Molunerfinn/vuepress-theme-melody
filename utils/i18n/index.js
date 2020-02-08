@@ -1,3 +1,4 @@
+import get from 'lodash/get'
 class TransLator {
   template
   setTemplate (template) {
@@ -12,9 +13,9 @@ class TransLator {
   translate = (templateKey, ...args) => {
     let length = 0
     if (args.length === 0) {
-      return this.template[templateKey]
+      return get(this.template, templateKey)
     }
-    return this.template[templateKey].replace(/%s/g, (word) => {
+    return get(this.template, templateKey).replace(/%s/g, (word) => {
       return args[length++]
     })
   }

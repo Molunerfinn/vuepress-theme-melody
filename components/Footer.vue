@@ -11,7 +11,7 @@
         {{ copyright }}
       </div>
       <div class="framework-info">
-        <span>Driven - </span>
+        <span>{{ $t('footer.driven') }} - </span>
         <a
           target="_blank"
           href="https://github.com/vuejs/vuepress"
@@ -19,7 +19,7 @@
           <span>VuePress</span>
         </a>
         <span class="footer-separator">|</span>
-        <span>Theme - </span>
+        <span>{{ $t('footer.theme') }} - </span>
         <a
           target="_blank"
           href="https://github.com/Molunerfinn/vuepress-theme-melody"

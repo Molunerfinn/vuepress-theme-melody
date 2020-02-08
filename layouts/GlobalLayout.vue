@@ -1,12 +1,16 @@
 <template>
   <div id="global-layout">
     <Header />
-    <transition name="fade">
-      <component
-        :is="layout"
-        :key="$page.key"
-      />
-    </transition>
+    <Sidebar />
+    <main>
+      <transition name="fade">
+        <component
+          :is="layout"
+          :key="$page.key"
+        />
+      </transition>
+    </main>
+    <NavIcon />
     <Footer />
   </div>
 </template>
@@ -14,10 +18,14 @@
 <script>
 import Header from '@theme/components/Header'
 import Footer from '@theme/components/Footer'
+import NavIcon from '@theme/components/NavIcon'
+import Sidebar from '@theme/components/Sidebar'
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    NavIcon,
+    Sidebar
   },
   computed: {
     layout () {

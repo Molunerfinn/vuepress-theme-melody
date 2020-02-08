@@ -17,12 +17,26 @@ module.exports = (themeConfig, ctx) => {
         '@vuepress/blog', {
           directories: [
             {
-              id: 'post',
+              id: 'posts',
               dirname: '_posts',
               path: '/',
               layout: 'Layout',
               itemLayout: 'Post',
               itemPermalink: themeConfig.permalink || '/:slug'
+            }
+          ],
+          frontmatters: [
+            {
+              id: 'tags',
+              keys: ['tag', 'tags'],
+              path: '/tags/',
+              layout: 'Tag'
+            },
+            {
+              id: 'categories',
+              keys: ['category', 'categories'],
+              path: '/categories/',
+              layout: 'Category'
             }
           ]
         }

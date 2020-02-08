@@ -29,11 +29,11 @@ body
     background-color: transparent
 
 a
-  color: #99a9bf
+  color: $theme-link-color
   transition: all 0.2s ease-in-out
 
   &:hover
-    color: #49b1f5
+    color: $theme-color
     text-decoration: none
 
 h1,
@@ -89,15 +89,19 @@ table
     border: 1px solid darken($light-grey, 10%)
     vertical-align: top
 
+#global-layout
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
 main
-  margin-top: $navbar-height
+  flex: 1 1
 
   &.open-sidebar
     padding-left: $sidebar-width
 
   .melody-content
     margin: 0 auto
-    padding-top: 1rem
     width: $content-width
 
     img
@@ -117,6 +121,26 @@ main
 
 .pull-right
   float: right
+
+.text-center
+  text-align: center
+
+#toggle-sidebar
+  position: fixed
+  bottom: $sidebar-icon-top
+  left: $sidebar-icon-left
+  z-index: 100
+  font-size: $sidebar-icon-size
+  cursor: pointer
+
+#go-up
+  position: fixed
+  right: $go-up-right
+  bottom: $go-up-bottom
+  z-index: 100
+  font-size: $sidebar-icon-size
+  opacity: 0
+  cursor: pointer
 
 @media screen and (max-width: $sm)
   main

@@ -1,6 +1,6 @@
 <template>
   <div class="busuanzi">
-    <template v-if="isPost && $themeConfig.busuanzi.page_uv">
+    <template v-if="$isPost && $themeConfig.busuanzi.page_uv">
       <span
         id="busuanzi_container_page_uv"
       >
@@ -34,12 +34,7 @@
 </template>
 <script>
 export default {
-  name: 'Busuanzi',
-  computed: {
-    isPost () {
-      return this.$page && this.$page.id === 'post'
-    }
-  }
+  name: 'Busuanzi'
 }
 </script>
 <style lang='stylus'>
