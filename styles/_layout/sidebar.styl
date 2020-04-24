@@ -15,20 +15,59 @@
     width: calc(100% - 0.25rem)
 
   .toggle-sidebar-info
-    padding-right: 0.5rem
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    width: 0
+    height: 0
+    border-width: 1.5rem 1.5rem 0 0
+    border-style: solid
+    border-color: $theme-color transparent transparent transparent
+    cursor: pointer
+    transition: border-color 0.2s ease-in-out
 
-    span
-      display: inline-block
-      padding: 0 0.6rem
-      height: h = 1.6rem
-      background: $light-blue
+    i.toggle-icon
+      position: absolute
+      top: -1.3rem
+      left: 0.1rem
       color: $white
-      line-height: h
-      cursor: pointer
-      transition: all 0.2s ease-in-out
 
-      &:hover
-        background: $cyan
+    &:before
+      content: ""
+      opacity: 0
+      transition: opacity 0.2s ease-in-out
+
+    &:after
+      content: ""
+      opacity: 0
+      transition: opacity 0.2s ease-in-out
+
+    &:hover
+      border-color: $ruby transparent transparent transparent
+
+      &:before
+        position: absolute
+        top: -1.6rem
+        left: 2rem
+        padding: 0.1rem 0.2rem
+        width: 8rem
+        background: rgba(0, 0, 0, 0.7)
+        color: $white
+        content: attr(data-text)
+        text-align: center
+        opacity: 1
+
+      &:after
+        position: absolute
+        top: -1.2rem
+        left: 1.2rem
+        width: 0
+        height: 0
+        border: 0.4rem solid transparent
+        border-right: 0.4rem solid rgba(0, 0, 0, 0.7)
+        content: ""
+        opacity: 1
 
   .author-info
     margin-left: -0.25rem
@@ -53,6 +92,9 @@
 
     &.hide
       display: none
+
+    &-links
+      overflow: hidden
 
     &__avatar
       margin: 0 auto
@@ -157,7 +199,7 @@
       padding-left: 0.4rem
 
     &__title
-      padding-right: 0.5rem
+      margin-right: 0.5rem
       text-align: center
       font-size: unit(0.9 * $rem, "px")
 

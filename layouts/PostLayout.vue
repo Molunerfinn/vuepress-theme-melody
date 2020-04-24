@@ -8,7 +8,7 @@
 <script>
 import LayoutContainer from '@theme/components/LayoutContainer'
 export default {
-  name: 'Layout',
+  name: 'PostLayout',
   components: {
     LayoutContainer
   },

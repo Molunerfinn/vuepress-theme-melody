@@ -19,8 +19,9 @@
 import Header from '@theme/components/Header'
 import Footer from '@theme/components/Footer'
 import NavIcon from '@theme/components/NavIcon'
-import Sidebar from '@theme/components/Sidebar'
+import Sidebar from '@theme/components/Sidebar/Index'
 export default {
+  name: 'GlobalLayout',
   components: {
     Header,
     Footer,

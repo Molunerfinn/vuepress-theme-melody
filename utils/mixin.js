@@ -3,7 +3,7 @@ export default {
     Vue.mixin({
       computed: {
         $isPost () {
-          return this.$page && this.$page.id === 'post'
+          return this.$page && this.$page.id === 'posts'
         },
         $isHome () {
           return this.$route && this.$site && (this.$route.path === this.$site.base)

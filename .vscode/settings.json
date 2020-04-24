@@ -24,5 +24,8 @@
   "stylusSupremacy.alwaysUseZeroWithoutUnit": true,
   "stylusSupremacy.sortProperties": "grouped",
   "stylusSupremacy.quoteChar": "\"",
-  "path-intellisense.extensionOnImport": true
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.mappings": {
+    "@theme/": "${workspaceRoot}/"
+  }
 }

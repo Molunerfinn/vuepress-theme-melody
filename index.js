@@ -21,7 +21,7 @@ module.exports = (themeConfig, ctx) => {
               dirname: '_posts',
               path: '/',
               layout: 'Layout',
-              itemLayout: 'Post',
+              itemLayout: 'PostLayout',
               itemPermalink: themeConfig.permalink || '/:slug'
             }
           ],

@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'Tags',
+  name: 'Tag',
   data () {
     return {
     }
