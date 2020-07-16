@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "dayjs": "^1.8.19",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vuejs-paginate": "^2.1.0"
   }
 }
